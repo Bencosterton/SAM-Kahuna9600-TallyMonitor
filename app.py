@@ -15,14 +15,15 @@ current_sources = {
 
 tally_queue = queue.Queue()
 
-# This is a dictionary to translate router names into user friendly names.
+# Dictionary used to translate 
 SOURCE_NAMES = {
     'CCU 1': 'ST1 CAM1',
-    'CCU 2': 'ST1 CAM2',
+    'CCU 2': 'ST1 CAm2',
     'CCU 3': 'ST1 CAM3',
+    'CCU 4': 'ST1 CAM4'
 }
 
-# These soures keep shwing up, but are not taken from the router. I didn't find them useful, so I've removed them from output.
+# List of sources to ignore
 IGNORED_SOURCES = [
     'PGM',
     'PVW',
