@@ -28,6 +28,12 @@ There are two versions of the script;<br>
 Two two verisons of the script work independently of each other. The idea was original written out as a Nodejs script, but worked into a python function for the web app. <br>
 The Nodejs version has a debug mode;<br>
 
+## Using Flask app;
+
+```bash
+python app.py -h KAHUNA-IP -p KAHUNA-PORT
+```
+
 ## Using Nodejs Script;
 
 ```bash
