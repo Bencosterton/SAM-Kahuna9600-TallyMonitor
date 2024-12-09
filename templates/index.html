@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>SAM Kahuna Source Monitor</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 40px;
+            background: #f0f0f0;
+        }
+        .pcr-container {
+            display: flex;
+            gap: 40px;
+            justify-content: center;
+        }
+        .pcr-box {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            min-width: 200px;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        h2 {
+            margin: 0 0 10px 0;
+            color: #666;
+        }
+        .source {
+            font-size: 24px;
+            font-weight: bold;
+            color: #000;
+        }
+    </style>
+    <script>
+        function refreshSources() {
+            fetch('/api/sources')
+                .then(response => response.json())
+                .then(data => {
+                    document.getElementById('pcr1-source').textContent = data.PCR1 || 'No Source';
+                    document.getElementById('pcr2-source').textContent = data.PCR2 || 'No Source';
+                });
+        }
+        
+        // Get routed sorces on page load and every second
+        document.addEventListener('DOMContentLoaded', function() {
+            refreshSources(); 
+            setInterval(refreshSources, 1000); 
+        });
+    </script>
+</head>
+<body>
+    <h1>SAM Kahuna Source Monitor</h1>
+    <div class="pcr-container">
+        <div class="pcr-box">
+            <h2>Gallery 1</h2>
+            <div id="pcr1-source" class="source">
+                {{ sources.PCR1 if sources.PCR1 else 'No Source' }}
+            </div>
+        </div>
+        <div class="pcr-box">
+            <h2>Gallery 2</h2>
+            <div id="pcr2-source" class="source">
+                {{ sources.PCR2 if sources.PCR2 else 'No Source' }}
+            </div>
+        </div>
+    </div>
+</body>
+</html>
