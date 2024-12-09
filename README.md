@@ -37,7 +37,7 @@ python app.py -h KAHUNA-IP -p KAHUNA-PORT
 ## Using Nodejs Script;
 
 ```bash
-node KahunaTally.js -h KAHUNA-IP -p KAHUNA-PORT --debug
+node KahunaTally.js -i KAHUNA-IP -p KAHUNA-PORT --debug
 ```
 <br>
 Output of the Nodejs script with debug option will offer up all the raw sources and their reqpective control bytes. This can be used to taylor the web app. <br>
