@@ -91,13 +91,13 @@ def get_sources():
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description='Kahuna Tally Monitor')
-    parser.add_argument('--kahuna-ip', type=str, required=True, help='Kahuna IP address')
-    parser.add_argument('--kahuna-port', type=int, required=True, help='Kahuna port number')
+    parser.add_argument('-i', type=str, required=True, help='Kahuna IP address')
+    parser.add_argument('-p', type=int, required=True, help='Kahuna port number')
     args = parser.parse_args()
 
     tally_thread = threading.Thread(
         target=tally_monitor,
-        args=(args.kahuna_ip, args.kahuna_port),
+        args=(args.i, args.p),
         daemon=True
     )
     tally_thread.start()
