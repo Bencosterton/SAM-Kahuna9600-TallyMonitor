@@ -6,7 +6,7 @@ Very basic interface to monitor sources tallied by a SAM Kahuna 9600
 
 ## Control Bytes
 
-Kahuna sppears to use different control bytes to signify the tally level of the source selected. <br>
+Kahuna appears to use different control bytes to signify the tally level of the source selected. <br>
 The unit being used here has two switchers. I am not sure how the control bytes are assigned at this stage but;
 
 
